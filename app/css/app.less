@@ -1,0 +1,67 @@
+/* app css stylesheet */
+
+/* MIXINS */
+@high-priority: #FF5722;
+@medium-priority: #FF9800;
+@low-priority: #9E9E9E;
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.new-todo-note {
+	padding: 15px 0 0 25px !important;
+	input {
+		width: 90%;
+	}
+}
+
+.priority0 {
+	.custom-note(@low-priority);
+}
+.priority1 {
+	.custom-note(@medium-priority);
+}
+.priority2 {
+	.custom-note(@high-priority);
+}
+
+.custom-note(@color:@low-priority){
+
+	padding: 10px;
+	margin: 15px;
+	width: 250px;
+	background-color: lighten(@color, 25%);
+	
+	.note-remove {
+		.custom-action(@color);
+	}
+	
+	.note-bottom {
+		button {
+			background: none;
+			border: 0;
+			font-weight: bold;
+			.custom-action(darken(@color, 5%));
+		}
+	}
+	
+	.custom-action(@color:#fff) {
+		color: @color;
+	
+		&:hover {
+			cursor: pointer;
+			color: darken(@color, 10%);
+		}
+	}
+}
+
+#clean {
+	position: fixed;
+	bottom: 0;
+}
+
+
+
+

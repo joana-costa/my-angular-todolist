@@ -1,0 +1,14 @@
+{
+  "name": "my-angular-todo",
+  "description": "My todo app in AngularJS",
+  "version": "0.0.0",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-route": "~1.4.0",
+    "bootstrap": "~3.3.5",
+    "less": "~2.5.3",
+    "angular-local-storage": "~0.2.3"
+  }
+}

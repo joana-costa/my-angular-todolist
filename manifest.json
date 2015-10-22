@@ -1,0 +1,18 @@
+{
+	"manifest_version": 2,
+	"name": "Todo Challenge App",
+	"description": "Application chrome de la todo app",
+	"version": "1.0",
+	"icons": {
+		"128": "128.png"
+	},
+	"app": {
+		"launch": {
+			"local_path": "app/index.html"
+		}
+	},
+	"permissions": [
+		"unlimitedStorage",
+		"notifications"
+	]
+}

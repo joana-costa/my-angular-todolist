@@ -1,0 +1,46 @@
+<div class="alert alert-danger" ng-show="alertMessage!=''">
+	{{alertMessage}}
+</div>
+<div>
+	<div id="note-todo-list">
+		<h1>TODO</h1>
+		<ng-note ng-repeat="task in todoTasks = (todos | filter:done=false)" todo="task"></ng-note>
+		<p ng-show="!todoTasks.length">Enter your first task:</p>
+		<div class="clearfix"></div>
+		
+		<div class="new-todo-note col-xs-6 col-sm-4 col-md-3 priority{{todo.priority}}">
+			<form name="todoForm">
+				<div class="row">
+					<div class="form-group">
+						<label class="sr-only" for="taskTitle">Task title</label>
+						<input type="text" class="form-control" id="taskTitle" placeholder="Task" ng-model="todo.title" name="title" >
+					</div>
+					<div class="row">
+						<div class="form-group col-xs-7">
+							<label class="sr-only" for="taskPriority">Priority</label>
+							<div class="btn-group" role="group" id="taskPriority">
+								<button type="button" ng-click="setPriority(0)" class="btn btn-default">0</button>
+								<button type="button" ng-click="setPriority(1)" class="btn btn-warning">1</button>
+								<button type="button" ng-click="setPriority(2)" class="btn btn-danger">2</button>
+							</div>
+						</div>
+						<div class="col-xs-5">
+							<button type="submit" class="btn btn-default" ng-click="addTodo()">Add</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="clearfix"></div>
+		
+	</div>
+		
+	<div id="note-done-list">
+		<h1>DONE</h1>
+		<ng-note ng-repeat="task in doneTasks = (todos | filter:done=true)" todo="task"></ng-note>
+		<p ng-show="!doneTasks.length">No done tasks yet!</p>
+		<div class="clearfix"></div>
+	</div>
+	
+	<button id="clean" class="btn btn-default" ng-click="cleanLocalStorage()">Clean all lists</button>
+</div>

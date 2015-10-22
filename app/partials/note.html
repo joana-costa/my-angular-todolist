@@ -1,0 +1,10 @@
+<div class="note col-xs-6 col-sm-4 col-md-3 priority{{todo.priority}}">
+  <a><span class="glyphicon glyphicon-remove pull-right note-remove" aria-hidden="true" ng-click="removeTodo()"></span></a>
+  <div class="note-text">
+    <h5>{{todo.title}}</h5>
+  </div>
+  <div class="note-bottom">
+    <span class="pull-left">{{todo.deadline}}</span>
+    <button class="add-button pull-right btn" role="button" ng-if="!todo.done" ng-click="checkTodo()">DONE !</button>
+  </div>
+</div>
